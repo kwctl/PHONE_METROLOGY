@@ -11,20 +11,18 @@ The repository has completed B0 bootstrap locally. Phase 0 project-control docum
 | Phase | Status | Evidence |
 |---|---|---|
 | B0 Bootstrap | Complete locally | Embedded Codex files materialized; TOML, JSON, and Python syntax validated; initial local commit `b94c277`. |
-| GitHub publication | Blocked | Repository `kwctl/PHONE_METROLOGY` exists, but connector writes return 403 and local git lacks an authenticated GitHub prompt. |
-| P0 Project control | In progress | Phase 0 documents created in `docs/`; independent human/agent review still pending. |
+| GitHub publication | Complete | Repository `kwctl/PHONE_METROLOGY` contains pushed branches `main`, `develop`, `phase/0-project-control`, `phase/1-architecture`, and `phase/2-ios-bootstrap`. |
+| P0 Project control | In progress | Phase 0 documents created and committed locally; independent human/agent review still pending. |
 | P1 Build foundation | Not started | Requires P0 acceptance and a macOS/Xcode environment for meaningful iOS build verification. |
 
 ## Latest Verification
 
 - Local git branches exist: `main`, `develop`, `phase/0-project-control`, `phase/1-architecture`, `phase/2-ios-bootstrap`.
 - Bootstrap syntax validation passed for 15 TOML files, 1 JSON file, and 2 Python hook files.
-- GitHub write verification failed with `403 Resource not accessible by integration`.
-- Local push failed because Git could not obtain GitHub HTTPS credentials in this non-interactive session.
+- GitHub push succeeded for all prepared branches.
 
 ## Human Gates
 
-- Grant GitHub app contents-write access or authenticate local Git to push the repository.
 - Provide macOS with current Xcode for iOS scaffold, `xcodebuild`, simulator, and archive checks.
 - Provide iPhone 15 Pro Max for runtime capability snapshots.
 - Provide reference artifacts and measurement equipment before any accuracy claim.
@@ -32,4 +30,4 @@ The repository has completed B0 bootstrap locally. Phase 0 project-control docum
 
 ## Next Smallest Work Unit
 
-Finish Phase 0 review, resolve GitHub publication, then create the Phase 1 Swift package and iOS scaffold on a macOS/Xcode host.
+Finish Phase 0 independent review, then create the Phase 1 Swift package and iOS scaffold on a macOS/Xcode host.

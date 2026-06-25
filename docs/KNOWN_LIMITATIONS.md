@@ -4,6 +4,6 @@
 - No metrological validation dataset exists yet.
 - No accuracy statement is approved.
 - No Xcode build has been run in this Windows-based session.
-- GitHub publication is blocked until repository content write access or local Git authentication is available.
+- GitHub publication is complete for the current bootstrap and Phase 0 branches.
 - Optional enterprise sync is not implemented.
 - App signing, TestFlight, and release distribution require human Apple account access.

@@ -10,6 +10,5 @@
 
 ## Current Blockers
 
-- GitHub publication needs repository contents-write access or local Git authentication.
 - iOS build verification needs macOS and Xcode.
 - Hardware validation needs iPhone 15 Pro Max and reference artifacts.
