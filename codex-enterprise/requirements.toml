@@ -1,0 +1,19 @@
+# Beispiel für eine organisationsverwaltete Codex Requirements Datei.
+# Diese Datei wird nicht automatisch aus dem Repository erzwungen.
+# Enterprise Administratoren verteilen sie über die von OpenAI dokumentierten Managed Configuration Wege.
+
+allowed_approval_policies = ["untrusted", "on-request"]
+allowed_sandbox_modes = ["read-only", "workspace-write"]
+allowed_web_search_modes = ["disabled", "cached", "live"]
+allow_remote_control = false
+
+[features]
+multi_agent = true
+hooks = true
+
+[rules]
+prefix_rules = [
+  { pattern = [{ any_of = ["sudo"] }], decision = "forbidden", justification = "Keine privilegierten Befehle durch Agenten." },
+  { pattern = [{ any_of = ["git"] }, { any_of = ["push"] }, { any_of = ["--force", "-f"] }], decision = "forbidden", justification = "Force Push ist untersagt." },
+  { pattern = [{ any_of = ["rm"] }, { any_of = ["-rf", "-fr"] }], decision = "prompt", justification = "Destruktive Löschbefehle benötigen menschliche Prüfung." }
+]

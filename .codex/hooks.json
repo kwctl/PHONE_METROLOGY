@@ -1,0 +1,30 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/bin/python3 \"$(git rev-parse --show-toplevel)/.codex/hooks/session_context.py\"",
+            "timeout": 10,
+            "statusMessage": "Lade Projektstatus und Qualitätsregeln"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/bin/python3 \"$(git rev-parse --show-toplevel)/.codex/hooks/pre_tool_use_guard.py\"",
+            "timeout": 10,
+            "statusMessage": "Prüfe Shell-Befehl gegen Repository-Richtlinien"
+          }
+        ]
+      }
+    ]
+  }
+}
